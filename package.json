@@ -1,0 +1,22 @@
+{
+  "name": "nodejs-hapi",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint server.js src test || true"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "hapi": "^15.2.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.8.1",
+    "good-console": "^6.1.2",
+    "mocha": "^3.1.2",
+    "sinon": "^1.17.6"
+  }
+}
