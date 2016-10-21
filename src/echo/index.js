@@ -9,6 +9,11 @@ function register(server, options, next) {
     handler: function(request, reply) {
       let eh = new EchoHandler();
       eh.echo(request, reply);
+    },
+    config: {
+      description: 'Get echo',
+      notes: 'echos the incoming str',
+      tags: ['api']
     }
   });
 

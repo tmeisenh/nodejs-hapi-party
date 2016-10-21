@@ -10,7 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "hapi": "^15.2.0"
+    "hapi": "^15.2.0",
+    "hapi-swagger": "^7.4.0",
+    "inert": "^4.0.2",
+    "vision": "^4.1.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",

@@ -1,24 +1,38 @@
 "use strict";
 
-var Hapi = require('hapi');
-const config = require('./src/config');
-var hello = require('./src/hello');
-var echo = require('./src/echo');
+const Hapi = require('hapi');
+const Inert = require('inert');
+const Vision = require('vision');
+const HapiSwagger = require('hapi-swagger');
+
+const Pack = require('./package');
+const Config = require('./src/config');
+const Hello = require('./src/hello');
+const Echo = require('./src/echo');
 
 var server = new Hapi.Server();
 
 server.connection({
-  host: config.host,
-  port: config.port
+  host: Config.host,
+  port: Config.port
 });
 
-server.register([
-  {
-    register: hello
-  },
-  {
-    register: echo 
+const options = {
+  info: {
+    'title': 'Test API Documentation',
+    'version': Pack.version,
   }
+};
+
+server.register([
+  Inert,
+  Vision,
+  {
+    'register': HapiSwagger,
+    'options': options
+  },
+  Hello,
+  Echo
 ], function(err) {
   'use strict';
   if (err) {
