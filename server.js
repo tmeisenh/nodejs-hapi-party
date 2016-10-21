@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const Hapi = require('hapi');
 const Inert = require('inert');
@@ -25,16 +25,15 @@ const options = {
 };
 
 server.register([
+  Hello,
+  Echo,
   Inert,
   Vision,
   {
     'register': HapiSwagger,
     'options': options
-  },
-  Hello,
-  Echo
+  }
 ], function(err) {
-  'use strict';
   if (err) {
     console.error(err); // eslint-disable-line no-console
   } else {

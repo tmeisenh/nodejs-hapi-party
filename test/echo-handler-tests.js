@@ -28,6 +28,7 @@ describe('EchoHandler', function(){
     it('should echo the parameter', () => {
       let str = 'blah';
       request = {params: {str: str }};
+
       testObject.echo(request, reply);
 
       reply.calledWithExactly({msg: str}).should.be.true;

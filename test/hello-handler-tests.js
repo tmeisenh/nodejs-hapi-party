@@ -28,8 +28,8 @@ describe('HelloHandler', function(){
   describe('hello', function(){
     it('should return hello world', () => {
       testObject.hello(request, reply);
-      reply.calledWithExactly({msg: 'hello world!'}).should.be.true;
 
+      reply.calledWithExactly({msg: 'hello world!'}).should.be.true;
       request.called.should.be.false;
     })
   })
@@ -37,8 +37,8 @@ describe('HelloHandler', function(){
   describe('bye', function(){
     it('should return good bye world', () => {
       testObject.bye(request, reply);
-      reply.calledWithExactly({msg: 'good bye world!'}).should.be.true;
 
+      reply.calledWithExactly({msg: 'good bye world!'}).should.be.true;
       request.called.should.be.false;
     })
   })
